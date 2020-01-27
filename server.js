@@ -13,9 +13,12 @@ const users = require('./routers/api/user.js')
 MongoClient.connect(url, { useUnifiedTopology: true }, function (err, db) {
   if (err) throw err;
   var dbase = db.db("HM-SYS");
+  module.exports = dbase;
+
 });
 app.use('/api/users', users)
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
   console.log(`server runniing ${port}`)
 })
+

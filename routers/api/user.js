@@ -7,21 +7,21 @@ router.get('/test', (req, res) => {
 })
 
 router.post('/register', (req, res) => {
-  console.log(req.body.name)
-  User.findOne({ name: req.body.name }).then(res => {
-    console.log(res)
-  }).catch(err => {
-    console.log(999)
-    console.log(err)
+  const db = require('../../server')
+  const newUser = new User({
+    name: req.body.name,
+    email: req.body.email,
+    password: req.body.password
   })
+  db.collection('user').insertOne(newUser).then(res => {
+    console.log(res)
+  })
+
   // User.findOne({ name: req.body.name }).then((user) => {
   //   if (user) {
   //     return res.status(400).json({ msg: '用户名已存在！' })
   //   } else {
-  //     const newUser = new User({
-  //       name: req.body.name,
-  //       email: req.body.email,
-  //       password: req.body.password
+  //  
   //     })
   //     newUser.save().then(user => res.json(user)).catch(err => {
   //       res.json(err)
