@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const MongoClient = require('mongodb').MongoClient;
+const mongoose = require('mongoose')
 const url = require('./config/url').mongoURI
 const bodyParser = require('body-parser')
 
@@ -8,17 +8,23 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 
-const users = require('./routers/api/user.js')
-
-MongoClient.connect(url, { useUnifiedTopology: true }, function (err, db) {
-  if (err) throw err;
-  var dbase = db.db("HM-SYS");
-  module.exports = dbase;
-
+//数据库连接
+mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
+var db = mongoose.connection;
+db.once('open', function () {
+  console.log('数据库已连接');
 });
+
+
+//路由
+const users = require('./routers/api/user.js')
 app.use('/api/users', users)
+
+
+//端口
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
   console.log(`server runniing ${port}`)
 })
+
 
