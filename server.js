@@ -18,7 +18,10 @@ db.once('open', function () {
 
 //路由
 const users = require('./routers/api/user.js')
+const village = require('./routers/api/village')
 app.use('/api/users', users)
+app.use('/api/source', village)
+
 
 
 //端口
