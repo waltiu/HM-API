@@ -6,18 +6,10 @@ const VillageDetail = require('../../models/Village').villageDetail
 
 const db = require('../../server')
 
-router.get('/villageList', (req, respond) => {
-  Village.find().then(res => {
-    respond.json(
-      {
-        status: 200,
-        data: res
-      }
-    )
-  })
-})
+
 router.get('/villageSearch', (req, respond) => {
-  Village.find(req.body).then(res => {
+  console.log(req.query)
+  Village.find(req.query).then(res => {
     respond.json(
       {
         status: 200,

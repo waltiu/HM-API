@@ -17,6 +17,15 @@ const UserSchema = new Schema({
   picture: {
     type: String,
     default: '112 '
+  },
+  token: {
+    type: String
+  },
+  permission: {
+    type: String
+  },
+  userInfo: {
+    type: String
   }
 })
 module.exports = mongoose.model("user", UserSchema)
