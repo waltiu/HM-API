@@ -34,6 +34,14 @@ const VillageSchema = new Village({
   time: {
     type: String,
     default: Date.now
+  },
+  type: {
+    type: String,
+    default: 1
+  },
+  collected: {
+    type: Boolean,
+    default: false
   }
 })
 

@@ -8,8 +8,9 @@ const db = require('../../server')
 
 
 router.get('/villageSearch', (req, respond) => {
-  console.log(req.query)
-  Village.find(req.query).then(res => {
+  let query = req.query
+  query.name = { $regex: req.query.name || '' }
+  Village.find(query).then(res => {
     respond.json(
       {
         status: 200,
@@ -26,6 +27,12 @@ router.get('/villageDetail', (req, respond) => {
         data: res
       }
     )
+  })
+})
+router.post('/villageUpate', (req, respond) => {
+  const updateVillage = new Village(req.body)
+  Village.update({ name: req.body.name }, { $set: req.body }).then(res => {
+    respond.json(res)
   })
 })
 module.exports = router;
