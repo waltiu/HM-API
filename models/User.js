@@ -16,7 +16,7 @@ const UserSchema = new Schema({
   },
   picture: {
     type: String,
-    default: '112 '
+    default: ' '
   },
   token: {
     type: String

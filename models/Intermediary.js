@@ -1,34 +1,19 @@
 const mongoose = require('mongoose');
-const House = mongoose.Schema;
-const HouseSchema = new House({
+const Intermediary = mongoose.Schema;
+const IntermediarySchema = new Intermediary({
   name: {
     type: String,
   },
-  area: {
+  city: {
     type: String,
   },
   district: {
     type: String,
   },
-  saleType: {
-    type: String,
-  },
-  price: {
-    type: String,
-  },
-  houseType: {
-    type: String,
-  },
-  Intermediary: {
+  numbers: {
     type: String,
   },
   address: {
-    type: String,
-  },
-  feature: {
-    type: String,
-  },
-  note: {
     type: String,
   },
   time: {
@@ -37,7 +22,7 @@ const HouseSchema = new House({
   },
   type: {
     type: String,
-    default: 2
+    default: 5
   },
   collected: {
     type: Boolean,
@@ -45,5 +30,5 @@ const HouseSchema = new House({
   }
 })
 module.exports = {
-  House: mongoose.model("house", HouseSchema),
+  Intermediary: mongoose.model("intermediarys", IntermediarySchema),
 }

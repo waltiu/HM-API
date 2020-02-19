@@ -19,8 +19,21 @@ db.once('open', function () {
 //路由
 const users = require('./routers/api/user.js')
 const village = require('./routers/api/village')
+const house = require('./routers/api/house')
+const school = require('./routers/api/school')
+
+const hospital = require('./routers/api/hospital')
+
+const Intermediary = require('./routers/api/Intermediary')
+
 app.use('/api/users', users)
 app.use('/api/source', village)
+app.use('/api/source', house)
+app.use('/api/source', school)
+
+app.use('/api/source', hospital)
+
+app.use('/api/source', Intermediary)
 
 
 

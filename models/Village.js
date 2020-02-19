@@ -54,6 +54,5 @@ const villageDetailSchema = new VillageDetail({
   }
 })
 module.exports = {
-  village: mongoose.model("village", VillageSchema),
-  villageDetail: mongoose.model('villagedetail', villageDetailSchema)
+  village: mongoose.model("village", VillageSchema)
 }

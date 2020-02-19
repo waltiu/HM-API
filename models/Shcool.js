@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
-const House = mongoose.Schema;
-const HouseSchema = new House({
+const School = mongoose.Schema;
+const SchoolSchema = new School({
   name: {
     type: String,
   },
@@ -10,25 +10,15 @@ const HouseSchema = new House({
   district: {
     type: String,
   },
-  saleType: {
+  schoolType: {
     type: String,
   },
-  price: {
+  form: {
     type: String,
   },
-  houseType: {
-    type: String,
-  },
-  Intermediary: {
-    type: String,
-  },
+
+
   address: {
-    type: String,
-  },
-  feature: {
-    type: String,
-  },
-  note: {
     type: String,
   },
   time: {
@@ -37,7 +27,7 @@ const HouseSchema = new House({
   },
   type: {
     type: String,
-    default: 2
+    default: 4
   },
   collected: {
     type: Boolean,
@@ -45,5 +35,5 @@ const HouseSchema = new House({
   }
 })
 module.exports = {
-  House: mongoose.model("house", HouseSchema),
+  School: mongoose.model("school", SchoolSchema),
 }
