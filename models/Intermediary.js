@@ -22,11 +22,14 @@ const IntermediarySchema = new Intermediary({
   },
   type: {
     type: String,
-    default: 5
+    default: '中介'
   },
   collected: {
     type: Boolean,
     default: false
+  },
+  collectedTime: {
+    type: String,
   }
 })
 module.exports = {

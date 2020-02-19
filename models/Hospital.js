@@ -27,11 +27,14 @@ const HospitalSchema = new Hospital({
   },
   type: {
     type: String,
-    default: 4
+    default: '医院'
   },
   collected: {
     type: Boolean,
     default: false
+  },
+  collectedTime: {
+    type: String,
   }
 })
 module.exports = {

@@ -37,11 +37,14 @@ const HouseSchema = new House({
   },
   type: {
     type: String,
-    default: 2
+    default: '房屋'
   },
   collected: {
     type: Boolean,
     default: false
+  },
+  collectedTime: {
+    type: String,
   }
 })
 module.exports = {

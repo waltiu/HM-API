@@ -27,11 +27,14 @@ const SchoolSchema = new School({
   },
   type: {
     type: String,
-    default: 4
+    default: '学校'
   },
   collected: {
     type: Boolean,
     default: false
+  },
+  collectedTime: {
+    type: String,
   }
 })
 module.exports = {

@@ -37,11 +37,14 @@ const VillageSchema = new Village({
   },
   type: {
     type: String,
-    default: 1
+    default: '小区'
   },
   collected: {
     type: Boolean,
     default: false
+  },
+  collectedTime: {
+    type: String,
   }
 })
 
