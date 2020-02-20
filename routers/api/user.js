@@ -33,6 +33,13 @@ router.get('/login', (req, respond) => {
   })
 
 })
+router.get('/userInfo', (req, respond) => {
+  console.log(req)
+  User.findOne({ name: req.query.name }).then(res => {
+    respond.json(res)
+  })
+})
+
 router.post('/register', (req, respond) => {
   const newUser = new User(req.body)
   newUser.save().then(res => {
@@ -48,24 +55,14 @@ router.post('/register', (req, respond) => {
     })
 
   })
+})
+router.post('/userUpate', (req, respond) => {
+  User.update({ name: req.body.name }, { $set: req.body }).then(res => {
+    console.log(res)
 
-
-
-
-
-  // User.findOne({ name: req.query.name }).then((user) => {
-  //   if (user) {
-  //     return res.status(400).json({ msg: '用户名已存在！' })
-  //   } else {
-  //     const newUser = new User({
-  //       name: req.query.name,
-  //       email: req.query.email,
-  //       password: req.query.password
-  //     })
-  //     newUser.save().then(user => res.json(user)).catch(err => {
-  //       res.json(err)
-  //     })
-  //   }
-  // }).catch(err => res.json(err))
+    User.findOne({ name: req.body.name }).then(res => {
+      respond.json(res)
+    })
+  })
 })
 module.exports = router;
