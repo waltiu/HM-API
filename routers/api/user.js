@@ -34,7 +34,6 @@ router.get('/login', (req, respond) => {
 
 })
 router.get('/userInfo', (req, respond) => {
-  console.log(req)
   User.findOne({ name: req.query.name }).then(res => {
     respond.json(res)
   })
@@ -58,7 +57,6 @@ router.post('/register', (req, respond) => {
 })
 router.post('/userUpate', (req, respond) => {
   User.update({ name: req.body.name }, { $set: req.body }).then(res => {
-    console.log(res)
 
     User.findOne({ name: req.body.name }).then(res => {
       respond.json(res)

@@ -7,11 +7,8 @@ const VillageSchema = new Village({
   area: {
     type: String,
   },
-  lng: {
-    type: String,
-  },
-  lat: {
-    type: String,
+  village: {
+    type: String
   },
   city: {
     type: String,

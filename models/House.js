@@ -5,7 +5,7 @@ const HouseSchema = new House({
     type: String,
   },
   area: {
-    type: String,
+    type: Number,
   },
   district: {
     type: String,
@@ -14,7 +14,7 @@ const HouseSchema = new House({
     type: String,
   },
   price: {
-    type: String,
+    type: Number,
   },
   houseType: {
     type: String,
@@ -26,7 +26,7 @@ const HouseSchema = new House({
     type: String,
   },
   feature: {
-    type: String,
+    type: Array,
   },
   note: {
     type: String,
