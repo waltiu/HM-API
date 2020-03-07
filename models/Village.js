@@ -3,6 +3,8 @@ const Village = mongoose.Schema;
 const VillageSchema = new Village({
   name: {
     type: String,
+    required: true,
+    unique: true
   },
   area: {
     type: String,
