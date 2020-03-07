@@ -3,6 +3,8 @@ const House = mongoose.Schema;
 const HouseSchema = new House({
   name: {
     type: String,
+    unique: true
+
   },
   area: {
     type: Number,

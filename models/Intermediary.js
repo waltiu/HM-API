@@ -3,6 +3,8 @@ const Intermediary = mongoose.Schema;
 const IntermediarySchema = new Intermediary({
   name: {
     type: String,
+    unique: true
+
   },
   city: {
     type: String,

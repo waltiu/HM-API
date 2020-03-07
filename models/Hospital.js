@@ -3,6 +3,8 @@ const Hospital = mongoose.Schema;
 const HospitalSchema = new Hospital({
   name: {
     type: String,
+    unique: true
+
   },
   area: {
     type: String,

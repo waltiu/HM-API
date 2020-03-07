@@ -30,23 +30,19 @@ router.get('/villageDetail', (req, respond) => {
   })
 })
 router.post('/villageSave', (req, respond) => {
-  Village.find({ name: req.body.name }).then(res => {
-
-  }).catch(
-    new Village(req.body).save().then(res => {
-      respond.json({
-        status: 200,
-        message: '新建成功！',
-        data: res
-      })
-    }).catch(err => {
-      respond.json({
-        status: 500,
-        message: '新建失败,数据名称已存在！'
-      })
-
+  new Village(req.body).save().then(res => {
+    respond.json({
+      status: 200,
+      message: '新建成功！',
+      data: res
     })
-  )
+  }).catch(err => {
+    respond.json({
+      status: 500,
+      message: '新建失败,数据名称已存在！'
+    })
+
+  })
 
 })
 router.post('/villageDelete', (req, respond) => {

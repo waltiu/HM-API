@@ -3,6 +3,8 @@ const School = mongoose.Schema;
 const SchoolSchema = new School({
   name: {
     type: String,
+    unique: true
+
   },
   area: {
     type: String,
