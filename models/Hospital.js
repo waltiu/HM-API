@@ -38,10 +38,13 @@ const HospitalSchema = new Hospital({
   collectedTime: {
     type: String,
   }, mapInfo: {
-    type: Array
+    type: Object
   },
   mapCenter: {
     type: Object
+  },
+  url: {
+    type: String
   }
 })
 module.exports = {

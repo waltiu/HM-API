@@ -38,10 +38,13 @@ const SchoolSchema = new School({
   collectedTime: {
     type: String,
   }, mapInfo: {
-    type: Array
+    type: Object
   },
   mapCenter: {
     type: Object
+  },
+  url: {
+    type: String
   }
 })
 module.exports = {

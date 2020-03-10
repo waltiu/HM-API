@@ -48,7 +48,7 @@ const HouseSchema = new House({
   collectedTime: {
     type: String,
   }, mapInfo: {
-    type: Array
+    type: Object
   },
   mapCenter: {
     type: Object
