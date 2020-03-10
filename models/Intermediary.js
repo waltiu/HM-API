@@ -32,6 +32,11 @@ const IntermediarySchema = new Intermediary({
   },
   collectedTime: {
     type: String,
+  }, mapInfo: {
+    type: Array
+  },
+  mapCenter: {
+    type: Object
   }
 })
 module.exports = {

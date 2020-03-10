@@ -37,6 +37,11 @@ const SchoolSchema = new School({
   },
   collectedTime: {
     type: String,
+  }, mapInfo: {
+    type: Array
+  },
+  mapCenter: {
+    type: Object
   }
 })
 module.exports = {

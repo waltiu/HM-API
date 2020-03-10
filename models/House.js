@@ -47,6 +47,11 @@ const HouseSchema = new House({
   },
   collectedTime: {
     type: String,
+  }, mapInfo: {
+    type: Array
+  },
+  mapCenter: {
+    type: Object
   }
 })
 module.exports = {

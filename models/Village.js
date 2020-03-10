@@ -44,6 +44,12 @@ const VillageSchema = new Village({
   },
   collectedTime: {
     type: String,
+  },
+  mapInfo: {
+    type: Array
+  },
+  mapCenter: {
+    type: Object
   }
 })
 
