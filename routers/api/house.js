@@ -7,10 +7,16 @@ const db = require('../../server')
 
 
 router.get('/houseSearch', (req, respond) => {
-  let query = JSON.parse(JSON.stringify(req.query))
 
-  query.name = { $regex: req.query.name || '' }
-  query.village = { $regex: req.query.village || '' }
+  let query = JSON.parse(JSON.stringify(req.query))
+  if (query.name) {
+    query.name = { $regex: req.query.name || '' }
+
+  }
+  if (query.village) {
+    query.village = { $regex: req.query.village || '' }
+
+  }
 
   if (req.query.feature) {
     query.feature = {
@@ -27,7 +33,7 @@ router.get('/houseSearch', (req, respond) => {
     let area = JSON.parse(query.area)
     query.area = { $gt: Number(area.from), $lt: Number(area.to) }
   }
-
+  console.log(query)
   House.find(query).then(res => {
     respond.json(
       {

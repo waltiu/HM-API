@@ -41,9 +41,8 @@ const HouseSchema = new House({
     type: String,
     default: '房屋'
   },
-  collected: {
-    type: Boolean,
-    default: false
+  priceDetail: {
+    type: String,
   },
   collectedTime: {
     type: String,
@@ -52,7 +51,17 @@ const HouseSchema = new House({
   },
   mapCenter: {
     type: Object
+  },
+  levelDetail: {
+    type: Object
+  },
+  photoInfo: {
+    type: Object
+  },
+  houseNumber: {
+    type: String
   }
+
 })
 module.exports = {
   House: mongoose.model("house", HouseSchema),
