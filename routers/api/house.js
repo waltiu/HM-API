@@ -44,7 +44,12 @@ router.get('/houseSearch', (req, respond) => {
   })
 })
 router.post('/houseSave', (req, respond) => {
-  new House(req.body).save().then(res => {
+  let info = req.body
+  if (info.layout) {
+    info.layout = `${req.body.layout.room}/${req.body.layout.hall}`
+
+  }
+  new House(info).save().then(res => {
     respond.json({
       status: 200,
       message: '新建成功！',

@@ -18,7 +18,7 @@ const HouseSchema = new House({
   price: {
     type: Number,
   },
-  houseType: {
+  layout: {
     type: String,
   },
   Intermediary: {
@@ -51,6 +51,9 @@ const HouseSchema = new House({
   },
   mapCenter: {
     type: Object
+  },
+  tel: {
+    type: String
   },
   levelDetail: {
     type: Object
