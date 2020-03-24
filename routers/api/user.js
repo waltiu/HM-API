@@ -3,14 +3,21 @@ const express = require('express');
 const router = express.Router();
 const User = require('../../models/User')
 const db = require('../../server')
-router.get('/test', (req, res) => {
-  res.json({ msg: 'ss' })
+router.get('/userList', (req, respond) => {
+  User.find().then(res => {
+    respond.json(
+      {
+        status: 200,
+        data: res
+      })
+
+  })
 })
+
 router.get('/login', (req, respond) => {
   User.findOne({ name: req.query.name }).then(res => {
     if (res) {
       if (res.password === req.query.password) {
-        console.log(req.password, req.query.password, 1)
         respond.json({
           status: 200,
           message: '登录成功，欢迎使用！',
@@ -33,6 +40,7 @@ router.get('/login', (req, respond) => {
   })
 
 })
+
 router.get('/userInfo', (req, respond) => {
   User.findOne({ name: req.query.name }).then(res => {
     respond.json(res)

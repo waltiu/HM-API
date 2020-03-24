@@ -7,7 +7,7 @@ const HouseSchema = new House({
 
   },
   area: {
-    type: Number,
+    type: String,
   },
   district: {
     type: String,
@@ -21,6 +21,9 @@ const HouseSchema = new House({
   layout: {
     type: String,
   },
+  face: {
+    type: String,
+  },
   Intermediary: {
     type: String,
   },
@@ -28,6 +31,9 @@ const HouseSchema = new House({
     type: String,
   },
   feature: {
+    type: Array,
+  },
+  setInfo: {
     type: Array,
   },
   note: {
@@ -55,13 +61,24 @@ const HouseSchema = new House({
   tel: {
     type: String
   },
+  village: {
+    type: String
+  },
   levelDetail: {
     type: Object
   },
   photoInfo: {
-    type: Object
+    type: Object,
+    default: {
+      main: '',
+      Bedroom: '',
+      Kitchen: '',
+      saloon: '',
+      Toilet: '',
+      other: ''
+    }
   },
-  houseNumber: {
+  payType: {
     type: String
   }
 

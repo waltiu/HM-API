@@ -22,7 +22,7 @@ const UserSchema = new Schema({
   },
   sex: {
     type: String,
-    default: '0'
+    default: ''
   },
   tel: {
     type: String,

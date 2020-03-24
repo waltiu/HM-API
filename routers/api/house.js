@@ -33,7 +33,6 @@ router.get('/houseSearch', (req, respond) => {
     let area = JSON.parse(query.area)
     query.area = { $gt: Number(area.from), $lt: Number(area.to) }
   }
-  console.log(query)
   House.find(query).then(res => {
     respond.json(
       {
@@ -56,6 +55,7 @@ router.post('/houseSave', (req, respond) => {
       data: res
     })
   }).catch(err => {
+    console.log(err, 999)
     respond.json({
       status: 500,
       message: '新建失败,数据名称已存在！'
