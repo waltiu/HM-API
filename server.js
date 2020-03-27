@@ -25,6 +25,7 @@ const school = require('./routers/api/school')
 const hospital = require('./routers/api/hospital')
 
 const Intermediary = require('./routers/api/Intermediary')
+const comment = require('./routers/api/comment')
 
 app.use('/api/users', users)
 app.use('/api/source', village)
@@ -34,6 +35,8 @@ app.use('/api/source', school)
 app.use('/api/source', hospital)
 
 app.use('/api/source', Intermediary)
+app.use('/api/comment', comment)
+
 
 
 
